@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Data\XMLDataSource.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Everbridge.ControlCenter.Common\Everbridge.ControlCenter.Common.csproj" />
+    <ProjectReference Include="..\Everbridge.ControlCenter.Models\Everbridge.ControlCenter.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Data\XMLDataSource.xml" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DoorRecords>
+	<DoorRecord>
+		<Id>1</Id>
+		<Label>First Door</Label>
+		<IsOpen>true</IsOpen>
+		<IsLocked>false</IsLocked>
+	</DoorRecord>
+	<DoorRecord>
+		<Id>2</Id>
+		<Label>Second Door</Label>
+		<IsOpen>false</IsOpen>
+		<IsLocked>true</IsLocked>
+	</DoorRecord>
+</DoorRecords>
