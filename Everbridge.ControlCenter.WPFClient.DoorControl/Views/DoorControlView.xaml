@@ -3,9 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Everbridge.ControlCenter.DoorControl.Views" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:Everbridge.ControlCenter.WPFClient.DoorControl.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <local:InverseBooleanConverter x:Key="inverseBooleanConverter"/>
+    </UserControl.Resources>
    
     <Grid>
         <Grid.RowDefinitions>
@@ -23,10 +26,18 @@
         <Label Content="EverBridge Control Center" Grid.ColumnSpan="4" FontSize="30" FontFamily="Aleo" HorizontalAlignment="Center" Foreground="RoyalBlue"/>
         <DataGrid Name="DoorGrid" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding DoorRecords}"  AutoGenerateColumns="False"  CanUserAddRows ="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id"  Binding="{Binding Id, UpdateSourceTrigger=LostFocus}" Width="100" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Label" Binding="{Binding Label,UpdateSourceTrigger=LostFocus}" Width="200" />
-                <DataGridCheckBoxColumn Header="IsOpen" Binding="{Binding IsOpen,UpdateSourceTrigger=LostFocus}"/>
-                <DataGridCheckBoxColumn Header="IsLocked" Binding="{Binding IsLocked,UpdateSourceTrigger=LostFocus}"/>
+                <DataGridTextColumn Header="Id"  Binding="{Binding Id}" Width="100" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Label" Binding="{Binding Label}" Width="200" />
+                <DataGridCheckBoxColumn x:Name="cbIsDoorOpen" Header="IsOpen" Binding="{Binding IsOpen, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTemplateColumn Header="IsLocked">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <CheckBox IsChecked="{Binding IsLocked, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding IsOpen, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Converter={StaticResource inverseBooleanConverter}}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

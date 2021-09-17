@@ -17,12 +17,48 @@ namespace Everbridge.ControlCenter.Models
             IsLocked = isLocked;
         }
 
-        public string Id { get; set; }
+        private string id;
+        public string Id 
+        { 
+            get { return id; }
+            set
+            {
+                SetProperty(ref id, value, nameof(Id));
+            }
+            
+        }
 
-        public string Label { get; set; }
+        public string label;
+        public string Label
+        {
+            get { return label; }
+            set
+            {
+                SetProperty(ref label, value, nameof(Label));
+            }
 
-        public bool IsOpen { get; set; }
+        }
 
-        public bool IsLocked { get; set; }
+        private bool isOpen;
+        public bool IsOpen
+        {
+            get { return isOpen; }
+            set
+            {
+                SetProperty(ref isOpen, value, nameof(IsOpen));
+            }
+
+        }
+
+        private bool isLocked;
+        public bool IsLocked
+        {
+            get { return isLocked; }
+            set
+            {
+                SetProperty(ref isLocked, value, nameof(IsLocked));
+            }
+
+        }
     }
 }

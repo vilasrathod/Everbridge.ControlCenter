@@ -23,8 +23,8 @@ namespace Everbridge.ControlCenter.DoorControl.ViewModels
         public DoorControlViewModel(IDoorControlService doorControlService)
         {
             DoorControlService = doorControlService;
-            doorRecords = new ItemsChangeObservableCollection<DoorRecord>();
-            newDoorRecords = new ItemsChangeObservableCollection<DoorRecord>();
+            doorRecords = new ObservableCollection<DoorRecord>();
+            newDoorRecords = new ObservableCollection<DoorRecord>();
             doorRecords.AddRange<DoorRecord>(DoorControlService.GetDoorRecords());
             RemoveDoorCommand = new DelegateCommand<object>(Remove, CanRemove);
             UpdateDoorCommand = new DelegateCommand<object>(UpdateDoor, CanUpdateDoor);
@@ -78,8 +78,8 @@ namespace Everbridge.ControlCenter.DoorControl.ViewModels
             }
         }
 
-        private ItemsChangeObservableCollection<DoorRecord> doorRecords;
-        public ItemsChangeObservableCollection<DoorRecord> DoorRecords
+        private ObservableCollection<DoorRecord> doorRecords;
+        public ObservableCollection<DoorRecord> DoorRecords
         {
             get { return doorRecords; }
             set
@@ -88,8 +88,8 @@ namespace Everbridge.ControlCenter.DoorControl.ViewModels
             }
         }
 
-        private ItemsChangeObservableCollection<DoorRecord> newDoorRecords;
-        public ItemsChangeObservableCollection<DoorRecord> NewDoorRecords
+        private ObservableCollection<DoorRecord> newDoorRecords;
+        public ObservableCollection<DoorRecord> NewDoorRecords
         {
             get { return newDoorRecords; }
             set
