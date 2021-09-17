@@ -12,4 +12,10 @@
 		<IsOpen>false</IsOpen>
 		<IsLocked>true</IsLocked>
 	</DoorRecord>
+	<DoorRecord>
+		<Id>3</Id>
+		<Label>Third Door</Label>
+		<IsOpen>false</IsOpen>
+		<IsLocked>false</IsLocked>
+	</DoorRecord>
 </DoorRecords>
