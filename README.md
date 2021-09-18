@@ -1,6 +1,6 @@
 # Everbridge.ControlCenter
 
-This project provides the cross platform WPF client and API server to maintain the DoorController based on */api/door*.
+This project provides the WPF client and API server to maintain the DoorController based on */api/door*.
 To avoid the Database dependency, it is using xml file as data source
 Server run at  https://localhost:5001
 
