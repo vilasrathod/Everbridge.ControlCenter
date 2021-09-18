@@ -56,3 +56,14 @@ If you were given another more hours, what would you have done next and why
 * Add the logging, exception handling to support the product debugging and maintabilirty Add application theme and localization support Try to use parallel multithreading  to optimize the application performance by using the multicore processor 
 * Add cache mechanism, load balancer, Message Queuing Protocol, Multithreading synchronization to optimize the Server performance
 
+
+How to run the application 
+1. Download the binaries from release tag, click on "1.0.0.0.alpha.zip" to download it from https://github.com/vilasrathod/Everbridge.ControlCenter/releases/tag/1.0.0.0
+2. First run the Server - Everbridge.ControlCenter.Server.exe
+Then run the client - Everbridge.ControlCenter.WPFClient.exe
+
+To build the source code required to install .NET Core 3.1 with following Nuget packages 
+Prism.Unity
+Prism.Core
+Newtonsoft.Json
+
